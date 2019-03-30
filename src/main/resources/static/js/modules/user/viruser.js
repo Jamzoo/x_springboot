@@ -3,13 +3,17 @@ $(function () {
         url: baseURL + 'viruser/list',
         datatype: "json",
         colModel: [
-			{ label: 'userId', name: 'userId', index: 'user_id', width: 50, key: true },
+			{ label: 'userId', name: 'id', index: 'id', width: 50, key: true },
 			{ label: '用户名', name: 'username', index: 'username', width: 80 },
 			{ label: '手机号', name: 'mobile', index: 'mobile', width: 80 },
 			{ label: '邮箱', name: 'email', index: 'email', width: 80 },
 			{ label: '密码', name: 'password', index: 'password', width: 80 },
-			{ label: '创建时间', name: 'createTime', index: 'create_time', width: 80 },
-			{ label: '状态', name: 'status', index: 'status', width: 80 }
+			{ label: '创建时间', name: 'createtime', index: 'createtime', width: 80 },
+			{ label: '状态', name: 'status', width: 80, formatter: function(value, options, row){
+            				return value === 0 ?
+            					'<span class="label label-danger">禁用</span>' :
+            					'<span class="label label-success">正常</span>';
+            			}},
         ],
 		viewrecords: true,
         height: 385,
@@ -41,6 +45,9 @@ $(function () {
 var vm = new Vue({
 	el:'#rrapp',
 	data:{
+	    q:{
+        	username: null
+        },
 		showList: true,
 		title: null,
 		user: {}
@@ -115,7 +122,8 @@ var vm = new Vue({
 			vm.showList = true;
 			var page = $("#jqGrid").jqGrid('getGridParam','page');
 			$("#jqGrid").jqGrid('setGridParam',{
-                page:page
+                 postData:{'username': vm.q.username},
+                 page:page
             }).trigger("reloadGrid");
 		}
 	}

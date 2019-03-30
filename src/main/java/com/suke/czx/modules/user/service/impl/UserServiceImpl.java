@@ -5,7 +5,6 @@ import com.suke.czx.common.validator.Assert;
 import com.suke.czx.modules.user.entity.UserEntity;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.Map;
 
 import com.suke.czx.modules.user.dao.UserDao;
 import com.suke.czx.modules.user.service.UserService;
-
+import org.springframework.stereotype.Service;
 
 
 @Service("userService")

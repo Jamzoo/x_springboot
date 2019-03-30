@@ -25,11 +25,12 @@ public class ViruserEntity implements Serializable {
 	//会员状态
 	private Integer status;
 	//创建时间
-	private Date createTime;
+	private Date createtime;
 	//创建时间
-	private Date updateTime;
+	private Date updatetime;
 	//创建时间
-	private Date deleteTime;
+	private Date deletetime;
+
 
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
@@ -83,27 +84,27 @@ public class ViruserEntity implements Serializable {
 		this.status = status;
 	}
 
-	public Date getCreateTime() {
-		return createTime;
+	public Date getCreatetime() {
+		return createtime;
 	}
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
+	public void setCreatetime(Date createtime) {
+		this.createtime = createtime;
 	}
 
-	public Date getUpdateTime() {
-		return updateTime;
+	public Date getUpdatetime() {
+		return updatetime;
 	}
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
+	public void setUpdatetime(Date updatetime) {
+		this.updatetime = updatetime;
 	}
 
-	public Date getDeleteTime() {
-		return deleteTime;
+	public Date getDeletetime() {
+		return deletetime;
 	}
 
-	public void setDeleteTime(Date deleteTime) {
-		this.deleteTime = deleteTime;
+	public void setDeletetime(Date deletetime) {
+		this.deletetime = deletetime;
 	}
 }

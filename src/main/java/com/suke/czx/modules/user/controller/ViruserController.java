@@ -3,7 +3,7 @@ package com.suke.czx.modules.user.controller;
 import com.suke.czx.common.utils.PageUtils;
 import com.suke.czx.common.utils.Query;
 import com.suke.czx.common.utils.R;
-import com.suke.czx.modules.user.entity.UserEntity;
+import com.suke.czx.modules.sys.controller.AbstractController;
 import com.suke.czx.modules.user.entity.ViruserEntity;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/viruser")
-public class ViruserController   {
+public class ViruserController  extends AbstractController {
 
     @Autowired
     private ViruserService viruserService;
@@ -32,7 +32,9 @@ public class ViruserController   {
     @RequiresPermissions("user:viruser:list")
     public R list(@RequestParam Map<String, Object> params){
         //查询列表数据
+        //System.out.println("ssssssss");
         Query query = new Query(params);
+
         query.isPaging(true);
         List<ViruserEntity> viruserList = viruserService.queryList(query);
         PageUtils pageUtil = new PageUtils(viruserList, query.getTotle(), query.getLimit(), query.getPage());
