@@ -15,6 +15,7 @@
         if (typeof(console) != 'undefined' && typeof(console.log) == 'function'){            
             Array.prototype.unshift.call(arguments, '[Ajax Upload]');
             console.log( Array.prototype.join.call(arguments, ' '));
+
         }
     } 
 

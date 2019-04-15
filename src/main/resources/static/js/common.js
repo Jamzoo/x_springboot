@@ -20,10 +20,12 @@ T.p = url;
 //请求前缀
 var baseURL = "/x_springboot/";
 
+
 //登录token
 var token = localStorage.getItem("token");
 if(token == 'null'){
     parent.location.href = baseURL + 'login.html';
+
 }
 
 //jquery全局配置
@@ -111,7 +113,8 @@ function getSelectedRows() {
     
     return grid.getGridParam("selarrrow");
 }
-
+//长时间得不到调度
+//大安
 //判断是否为空
 function isBlank(value) {
     return !value || !/\S/.test(value)
